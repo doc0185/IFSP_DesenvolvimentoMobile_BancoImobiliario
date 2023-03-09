@@ -22,5 +22,9 @@ public class StarBank {
         cc.creditValue(valor);
     }
 
+    public void pay(CreditCard cc, Double valor) throws CreditCard.NegativeException {
+        cc.debitValue(valor);
+    }
+
 
 }
