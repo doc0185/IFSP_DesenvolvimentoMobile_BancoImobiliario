@@ -17,6 +17,7 @@ public class CreditCard {
     }
 
     public void creditValue(double valor) {
+
         balance = balance + valor;
     }
 
@@ -27,5 +28,29 @@ public class CreditCard {
                 balance = balance - valor;
             }
 
+    }
+
+    public static int getLastCardId() {
+        return LAST_CARD_ID;
+    }
+
+    public static void setLastCardId(int lastCardId) {
+        LAST_CARD_ID = lastCardId;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
