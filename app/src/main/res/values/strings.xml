@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">App4_BancoImobiliario</string>
+    <string name="error_debit">Valor insuficiente</string>
+</resources>

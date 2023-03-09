@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:background="#03A9F4"
+    android:orientation="vertical"
+    tools:context=".view.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <EditText
+            android:id="@+id/edittext_input_cartao_mais"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:layout_margin="16dp"
+            android:hint="Cartão (+)"
+            android:textAlignment="center"
+            android:background="@color/white"/>
+
+        <EditText
+            android:id="@+id/edittext_input_cartao_menos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:layout_margin="16dp"
+            android:hint="Cartão (-)"
+            android:textAlignment="center"
+            android:background="@color/white"/>
+
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edittext_input_valor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_margin="16dp"
+        android:hint="Valor"
+        android:textAlignment="center"
+        android:background="@color/white"/>
+
+    <Button
+        android:id="@+id/button_transf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="40dp"
+        android:text="TRANSFERÊNCIA"
+        android:backgroundTint="#FF5722"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_recv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:text="RECEBER"
+            android:backgroundTint="#FF5722"/>
+
+        <Button
+            android:id="@+id/button_pag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:text="PAGAMENTO"
+            android:backgroundTint="#FF5722"/>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_rodada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="40dp"
+        android:text="RODADA COMPLETA"
+        android:backgroundTint="#FF5722"/>
+
+    <Button
+        android:id="@+id/button_RESET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="40dp"
+        android:text="RESET"
+        android:backgroundTint="#8BC34A"/>
+
+</LinearLayout>
