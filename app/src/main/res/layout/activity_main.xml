@@ -22,7 +22,7 @@
             android:layout_weight="1"
             android:padding="8dp"
             android:layout_margin="16dp"
-            android:hint="Cartão (+)"
+            android:hint="@string/cart_o"
             android:inputType="numberDecimal"
             android:textAlignment="center"
             android:background="@color/white"/>
@@ -34,7 +34,7 @@
             android:layout_weight="1"
             android:padding="8dp"
             android:layout_margin="16dp"
-            android:hint="Cartão (-)"
+            android:hint="@string/cart_om"
             android:inputType="numberDecimal"
             android:textAlignment="center"
             android:background="@color/white"/>
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:layout_margin="16dp"
-        android:hint="Valor"
+        android:hint="@string/valor"
         android:inputType="numberDecimal"
         android:textAlignment="center"
         android:background="@color/white"/>
@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="40dp"
-        android:text="TRANSFERÊNCIA"
+        android:text="@string/transfer_ncia"
         android:backgroundTint="#FF5722"/>
 
     <LinearLayout
@@ -74,7 +74,7 @@
             android:layout_gravity="center"
             android:layout_margin="8dp"
             android:layout_weight="1"
-            android:text="RECEBER"
+            android:text="@string/receber"
             android:backgroundTint="#FF5722"/>
 
         <Button
@@ -84,7 +84,7 @@
             android:layout_gravity="center"
             android:layout_margin="8dp"
             android:layout_weight="1"
-            android:text="PAGAMENTO"
+            android:text="@string/pagamento"
             android:backgroundTint="#FF5722"/>
 
 
@@ -96,7 +96,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="40dp"
-        android:text="RODADA COMPLETA"
+        android:text="@string/rodada_completa"
         android:backgroundTint="#FF5722"/>
 
     <Button
@@ -105,7 +105,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="20dp"
-        android:text="RESET"
+        android:text="@string/reset"
         android:backgroundTint="#8BC34A"/>
 
 </LinearLayout>
