@@ -4,7 +4,7 @@ import android.widget.Toast;
 
 public class CreditCard {
 
-    public static class NegativeException extends Exception {};
+
     private static int LAST_CARD_ID = 0;
     private double balance;
 

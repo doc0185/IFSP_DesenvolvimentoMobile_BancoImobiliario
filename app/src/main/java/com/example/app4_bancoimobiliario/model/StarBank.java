@@ -33,8 +33,9 @@ public class StarBank {
         cc.creditValue(valor);
     }
 
-    public void pay(CreditCard cc, Double valor) throws CreditCard.NegativeException {
+    public void pay(CreditCard cc, Double valor) throws NegativeException {
         cc.debitValue(valor);
+
     }
 
     public CreditCard searchID(int id){

@@ -2,5 +2,6 @@
     <string name="app_name">App4_BancoImobiliario</string>
     <string name="error_debit">Valor insuficiente</string>
     <string name="invalid_temp_message">Valor informado inválido</string>
+    <string name="invalid_temp_message2">Saldo insuficiente</string>
 
 </resources>

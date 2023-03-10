@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.example.app4_bancoimobiliario.R;
 import com.example.app4_bancoimobiliario.model.CreditCard;
+import com.example.app4_bancoimobiliario.model.NegativeException;
 import com.example.app4_bancoimobiliario.model.StarBank;
 
 
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText inputEditTextCartaoMenos;
     private EditText inputEditTextValor;
     private Button receiveButton;
+    private Button payButton;
+    private Button transfButton;
     private Button resetButton;
     private Button rowButton;
 
@@ -26,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        StarBank.getInstance().startCreditCards();
 
         inputEditTextCartaoMais = findViewById(R.id.edittext_input_cartao_mais);
         inputEditTextCartaoMenos = findViewById(R.id.edittext_input_cartao_menos);
@@ -33,6 +37,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         receiveButton = findViewById(R.id.button_recv);
         receiveButton.setOnClickListener(this);
+        payButton = findViewById(R.id.button_pag);
+        payButton.setOnClickListener(this);
+        transfButton = findViewById(R.id.button_transf);
+        transfButton.setOnClickListener(this);
         resetButton = findViewById(R.id.button_RESET);
         resetButton.setOnClickListener(this);
         rowButton = findViewById(R.id.button_rodada);
@@ -51,6 +59,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button_rodada:
                 row(StarBank.getInstance());
+                break;
+            case R.id.button_pag:
+                pay(StarBank.getInstance());
+                break;
+            case R.id.button_transf:
+                transf(StarBank.getInstance());
                 break;
         }
 
@@ -75,6 +89,70 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         String balance = String.valueOf(sb.searchID(id1).getBalance());
         inputEditTextValor.setText(balance);
+
+    }
+
+    public void pay(StarBank sb){
+
+        double valor = 0;
+        int id1;
+        String cartao1 = inputEditTextCartaoMenos.getText().toString();
+        String valorDigitado = inputEditTextValor.getText().toString();
+        try{
+            id1 = Integer.parseInt(cartao1);
+            valor = Double.valueOf(valorDigitado);
+        } catch (NumberFormatException nfException){
+            id1 = 0;
+            valor = 0;
+            Toast.makeText(this, getString(R.string.invalid_temp_message), Toast.LENGTH_SHORT).show();
+        }
+
+        try {
+            sb.pay(sb.searchID(id1), valor);
+        } catch (NegativeException e) {
+            Toast.makeText(this, getString(R.string.invalid_temp_message2), Toast.LENGTH_SHORT).show();
+        }
+
+        String balance = String.valueOf(sb.searchID(id1).getBalance());
+        inputEditTextValor.setText(balance);
+
+    }
+
+    public void transf(StarBank sb){
+        double valor = 0;
+        int id2;
+        String cartao2 = inputEditTextCartaoMenos.getText().toString();
+        String valorDigitado = inputEditTextValor.getText().toString();
+        try{
+            id2 = Integer.parseInt(cartao2);
+            valor = Double.valueOf(valorDigitado);
+        } catch (NumberFormatException nfException){
+            id2 = 0;
+            valor = 0;
+            Toast.makeText(this, getString(R.string.invalid_temp_message), Toast.LENGTH_SHORT).show();
+        }
+        try {
+            sb.pay(sb.searchID(id2), valor);
+        } catch (NegativeException e) {
+            Toast.makeText(this, getString(R.string.invalid_temp_message2), Toast.LENGTH_SHORT).show();
+        }
+
+        int id1;
+        String cartao1 = inputEditTextCartaoMais.getText().toString();
+        try{
+            id1 = Integer.parseInt(cartao1);
+        } catch (NumberFormatException nfException){
+            id1 = 0;
+            valor = 0;
+            Toast.makeText(this, getString(R.string.invalid_temp_message), Toast.LENGTH_SHORT).show();
+        }
+
+        sb.receive(sb.searchID(id1), valor);
+
+        String balance2= String.valueOf(sb.searchID(id2).getBalance());
+        String balance1 = String.valueOf(sb.searchID(id1).getBalance());
+        Toast.makeText(this, "Saldo do Pagante: " + balance2 + "  " + "Saldo do Recebedor: " + balance1, Toast.LENGTH_SHORT).show();
+
 
     }
 
