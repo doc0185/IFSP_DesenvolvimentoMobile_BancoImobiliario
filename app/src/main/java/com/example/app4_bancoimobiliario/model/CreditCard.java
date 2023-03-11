@@ -1,6 +1,5 @@
 package com.example.app4_bancoimobiliario.model;
 
-import android.widget.Toast;
 
 public class CreditCard {
 

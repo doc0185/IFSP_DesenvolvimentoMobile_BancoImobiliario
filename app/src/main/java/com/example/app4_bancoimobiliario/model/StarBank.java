@@ -1,8 +1,5 @@
 package com.example.app4_bancoimobiliario.model;
 
-import static java.sql.DriverManager.println;
-
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
