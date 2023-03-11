@@ -23,7 +23,7 @@
             android:padding="8dp"
             android:layout_margin="16dp"
             android:hint="@string/cart_o"
-            android:inputType="numberDecimal"
+            android:inputType="number"
             android:textAlignment="center"
             android:background="@color/white"/>
 
@@ -35,7 +35,7 @@
             android:padding="8dp"
             android:layout_margin="16dp"
             android:hint="@string/cart_om"
-            android:inputType="numberDecimal"
+            android:inputType="number"
             android:textAlignment="center"
             android:background="@color/white"/>
 

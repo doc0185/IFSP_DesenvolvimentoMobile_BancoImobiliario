@@ -3,6 +3,8 @@
     <string name="error_debit">Valor insuficiente</string>
     <string name="invalid_temp_message">Valor informado inválido</string>
     <string name="invalid_temp_message2">Saldo insuficiente</string>
+    <string name="invalid_temp_message3">ID inválido</string>
+    <string name="invalid_temp_message4">Faltam valores para Transferência</string>
     <string name="cart_o">Cartão (+)</string>
     <string name="cart_om">Cartão (-)</string>
     <string name="valor">Valor</string>
